@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.math.RoundingMode;
 
 public class Lesson06 {
     public static void main(String[] args) {
@@ -7,7 +6,7 @@ public class Lesson06 {
         Cat cat2 = new Cat("Джесси");
 
         Dog dog1 = new Dog("Лорд");
-        Dog dog2 = new Dog("Нана");
+        Dog dog2 = new Dog("Призрак");
 
         cat1.info();
         cat1.run(200);
@@ -16,10 +15,24 @@ public class Lesson06 {
 
         System.out.println();
 
+        cat2.info();
+        cat2.run(200);
+        cat2.jump(2.0);
+        cat2.swim(5);
+
+        System.out.println();
+
         dog1.info();
         dog1.run(500);
         dog1.jump(0.5);
         dog1.swim(10);
+
+        System.out.println();
+
+        dog2.info();
+        dog2.run(500);
+        dog2.jump(0.5);
+        dog2.swim(10);
     }
 
     public static class Animal {
@@ -65,7 +78,12 @@ public class Lesson06 {
 
         @Override
         public void swim(int water) {
-            System.out.println(type + " не хочет плыть.");
+            System.out.println(type + " " + name + " не хочет плыть.");
+        }
+
+        @Override
+        public void info() {
+            System.out.println(this.type + " " + this.name + " может пробежать: " + this.maxLength + " м., прыгнуть на: " + this.maxHeight + " м.");
         }
     }
 
